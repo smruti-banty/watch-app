@@ -10,14 +10,24 @@ cartButton.addEventListener('click', onCartClick);
 closeCartButton.addEventListener('click', cartModalToggle);
 
 function onRemoveAll() {
-    fetch(`/api/product/cart`, { method: 'delete' }).then(response => {
+    const token = localStorage.getItem('token');
+    const headers = {
+        authorization: `Bearer ${token}`
+    };
+
+    fetch(`/api/product/cart`, { method: 'delete', headers }).then(response => {
         fetchCart();
         counterValue();
     });
 }
 
 function onCheckout(event) {
-    fetch(`/api/product/cart/checkout`, { method: 'POST' }).then(response => {
+    const token = localStorage.getItem('token');
+    const headers = {
+        authorization: `Bearer ${token}`
+    };
+
+    fetch(`/api/product/cart/checkout`, { method: 'POST', headers }).then(response => {
         fetchCart();
         counterValue();
     })
@@ -41,7 +51,12 @@ async function onCartClick(event) {
 
 async function fetchCart() {
     const cartBody = document.querySelector('.cart-container .cart-body');
-    const response = await fetch(`/api/product/cart`);
+    const token = localStorage.getItem('token');
+    const headers = {
+        authorization: `Bearer ${token}`
+    };
+
+    const response = await fetch(`/api/product/cart`, { headers });
     const products = await response.json();
 
     let body = "";
@@ -75,8 +90,10 @@ function eachBagBtnClick(event) {
 }
 
 function sendToBackend(product) {
+    const token = localStorage.getItem('token');
     const headers = {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`
     };
 
     fetch("/api/product/cart", {
@@ -95,11 +112,22 @@ function sendToBackend(product) {
     })
 }
 
-async function counterValue() {
-    const response = await fetch(`/api/product/cart/count`);
-    const countValue = await response.json();
+async function counterValue(reset) {
+    if (reset != 0) {
+        const token = localStorage.getItem('token');
+        const headers = {
+            authorization: `Bearer ${token}`
+        };
 
-    cartButton.dataset.counter = countValue.countCartProduct;
+        const response = await fetch(`/api/product/cart/count`, { headers });
+        const countValue = await response.json();
+
+        cartButton.dataset.counter = countValue.countCartProduct;
+    } else {
+        cartButton.dataset.counter = reset;
+    }
+
+
 }
 
 function setTotalAmount(total) {
@@ -124,7 +152,12 @@ function addRemoveEventHandler() {
 
 function onCartRemove(event) {
     const cartId = event.target.dataset.cartid;
-    fetch(`/api/product/cart/${cartId}`, { method: "delete" }).then(
+    const token = localStorage.getItem('token');
+    const headers = {
+        authorization: `Bearer ${token}`
+    };
+
+    fetch(`/api/product/cart/${cartId}`, { method: "delete", headers }).then(
         (response) => { fetchCart(); counterValue() })
 }
 

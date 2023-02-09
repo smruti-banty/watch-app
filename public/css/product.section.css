@@ -6,42 +6,36 @@
     gap: 1rem;
 }
 
-.product .card {
-    background: var(--white);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-.card .rating {
+.product .card-1 .rating {
     position: absolute;
     right: 10px;
+    z-index: 1;
+    cursor: pointer;
 }
 
-.card:hover img {
+.card-1:hover img {
     scale: 1.2;
 }
 
-.product .card .header {
+.product .card-1 .header {
     display: grid;
     place-items: center;
     padding-bottom: 25px;
     border-bottom: 1px solid gray;
 }
 
-.product .card .thumbnail {
+.product .card-1 .thumbnail {
     width: 300px;
     height: 300px;
     transition: .25s;
 }
 
-.product .card .body {
+.product .card-1 .body {
     margin-top: 5px;
     text-align: center;
 }
 
-.product .card .body .color-box {
+.product .card-1 .body .color-box {
     margin-top: 15px;
     padding: 10px 0;
     border-top: 1px solid gray;
@@ -52,7 +46,7 @@
     gap: 1rem;
 }
 
-.product .card .body .color-box .color {
+.product .card-1 .body .color-box .color {
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -61,7 +55,7 @@
     transition: 0.15s;
 }
 
-.product .card .body .color:hover::after, .product .card .body .active::after{
+.product .card-1 .body .color:hover::after, .product .card .body .active::after{
     content: '';
     position: absolute;
     top: 50%;
@@ -73,7 +67,7 @@
     border-radius: 50%;
 }
 
-.product .card .footer {
+.product .card-1 .footer {
     padding-left: 10px;
     margin-top: 10px;
     display: flex;
@@ -82,12 +76,12 @@
     cursor: pointer;
 }
 
-.product .card .footer .mrp{
+.product .card-1 .footer .mrp{
     color: gray;
     text-decoration: line-through;
 }
 
-.product .card .footer .bag-button {
+.product .card-1 .footer .bag-button {
     all: unset;
     background-color: var(--light-black);
     color: var(--white);

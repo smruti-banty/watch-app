@@ -6,22 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerse App</title>
+    <link rel="stylesheet" href="/css/loginsignup.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/utility.css">
+    <link rel="stylesheet" href="/css/cardflip.css">
     <link rel="stylesheet" href="/css/product.section.css">
     <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/search.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
     <script src="/js/itemload.js" defer></script>
+    <script src="/js/loginsignup.js" defer></script>
     <script src="/js/handlecart.js" defer></script>
     <script src="/js/handlesearch.js" defer></script>
+    <script src="/js/handlerating.js" defer></script>
 
 </head>
 
 <body>
     <header>
         <div class="left">
-            <h2>Logo</h2>
+            <h2>Watches</h2>
         </div>
         <div class="right">
             <div class="search-box">
@@ -32,7 +36,7 @@
                     <input type="search">
                 </div>
             </div>
-            <div><img src="/images/contacts.png" alt="user"></div>
+            <div class="logout"><img src="/images/logout.png" alt="user" title="logout"></div>
             <div class="cart" data-counter="0"><img src="/images/cart.png" alt="cart"></div>
         </div>
     </header>
@@ -43,7 +47,7 @@
 
     <!-- cart modal -->
     <div class="cart-background d-none">
-        <div class="cart-container"> 
+        <div class="cart-container">
             <div class="cart-header">
                 <h4>Shopping Cart</h4>
                 <h5 class="remove-all">Remove All</h5>
@@ -79,6 +83,67 @@
         </div>
     </div>
 
+    <!-- Login & signup dropdown -->
+    <div class="login-background">
+        <div class="login-container">
+            <div class="login-signup-card">
+
+                <div class="signup-card">
+                    <div class="signin-heading">
+                        <h2>Signup</h2>
+                    </div>
+
+                    <div class="signin-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Enter name</label>
+                                <input type="text" name="name" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Enter email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Enter password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+
+                            <div class="signin-btn">
+                                <input type="submit" value="Signin">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="login-card">
+                    <div class="login-heading">
+                        <h2>Login</h2>
+                    </div>
+
+                    <div class="login-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Enter email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Enter password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+
+                            <div class="login-btn">
+                                <input type="submit" value="Login">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

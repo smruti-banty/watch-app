@@ -9,3 +9,7 @@
 .d-none {
     display: none;
 }
+
+.rotate-card {
+    transform: rotateY(180deg);
+}

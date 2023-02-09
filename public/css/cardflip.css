@@ -1,0 +1,113 @@
+.product .card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.product .card-container .cards {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.product .card-container .cards .card {
+    position: absolute;
+    width: 100%;
+    height: 555px;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
+    background-color: var(--white);
+}
+
+.product .card-container .cards .card-2 {
+    transform: rotateY(180deg);
+}
+
+.product .card-container .card-2 .header {
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding: 5px 0;
+}
+
+.product .card-container .card-2 .cross {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: deeppink;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.product .card-container .card-2 .body {
+    height: 350px;
+    overflow: auto;
+    border-bottom: 1px solid gray;
+    margin-top: 10px;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+
+.product .card-container .card-2 .body::-webkit-scrollbar {
+    display: none;
+}
+
+.product .card-container .card-2 .body .review {
+    margin-bottom: 10px;
+}
+
+.product .card-container .card-2 .body .name-review {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product .card-container .card-2 .footer h3 {
+    text-align: center;
+}
+
+.product .card-container .card-2 .footer .review {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product .card-container .card-2 .footer .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product .card-container .card-2 .footer .form-group .rate-star {
+    display: flex;
+    align-items: center;
+    
+}
+
+.product .card-container .card-2 .footer .form-group .rate-star p{
+    cursor: pointer;
+}
+
+.product .card-container .card-2 .footer .submit-btn {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.product .card-container .card-2 .footer .submit-btn button {
+    all: unset;
+    width: 150px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.01rem;
+    background-color: navy;
+    color: var(--white);
+    border-radius: 5px;
+    padding: 5px;
+}
