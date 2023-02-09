@@ -1,0 +1,96 @@
+.product {
+    width: 80%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.product .card {
+    background: var(--white);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.card .rating {
+    position: absolute;
+    right: 10px;
+}
+
+.card:hover img {
+    scale: 1.2;
+}
+
+.product .card .header {
+    display: grid;
+    place-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid gray;
+}
+
+.product .card .thumbnail {
+    width: 300px;
+    height: 300px;
+    transition: .25s;
+}
+
+.product .card .body {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.product .card .body .color-box {
+    margin-top: 15px;
+    padding: 10px 0;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.product .card .body .color-box .color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: 0.15s;
+}
+
+.product .card .body .color:hover::after, .product .card .body .active::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.product .card .footer {
+    padding-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.product .card .footer .mrp{
+    color: gray;
+    text-decoration: line-through;
+}
+
+.product .card .footer .bag-button {
+    all: unset;
+    background-color: var(--light-black);
+    color: var(--white);
+    padding: 10px 50px;
+    border-radius: 100px;
+}

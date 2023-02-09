@@ -1,0 +1,27 @@
+header .search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;   
+    transition: 0.25s; 
+}
+
+.border-property {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+header .search-box {
+    transition: 0.25s;
+}
+
+header .search-box .search-icon {
+    display: grid;
+    place-items: center;
+}
+
+
+header .search-box input {
+    all: unset;
+}
+

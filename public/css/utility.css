@@ -1,0 +1,11 @@
+:root {
+    --light-black: #05031cf1;
+    --white: #f1f1f1;
+}
+.c-gray {
+    color: gray;
+}
+
+.d-none {
+    display: none;
+}

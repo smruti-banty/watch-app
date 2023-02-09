@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerse App</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/utility.css">
+    <link rel="stylesheet" href="/css/product.section.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+    <script src="/js/itemload.js" defer></script>
+    <script src="/js/handlecart.js" defer></script>
+    <script src="/js/handlesearch.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <h2>Logo</h2>
+        </div>
+        <div class="right">
+            <div class="search-box">
+                <div class="search-icon">
+                    <img src="/images/search.png" alt="search">
+                </div>
+                <div class="search-field d-none">
+                    <input type="search">
+                </div>
+            </div>
+            <div><img src="/images/contacts.png" alt="user"></div>
+            <div class="cart" data-counter="0"><img src="/images/cart.png" alt="cart"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="product"></section>
+    </main>
+
+    <!-- cart modal -->
+    <div class="cart-background d-none">
+        <div class="cart-container"> 
+            <div class="cart-header">
+                <h4>Shopping Cart</h4>
+                <h5 class="remove-all">Remove All</h5>
+            </div>
+
+            <div class="cart-body"></div>
+
+            <div class="cart-footer">
+                <div>
+                    <div class="item">
+                        <div class="total">
+                            <h4>Sub Total</h4>
+                            <p class="c-gray"><span class="total-items">2</span> items</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="total-price">
+                    <h3>&#8377; <span class="total-amount">1234</span></h3>
+                </div>
+
+                <div>
+                    <div class="checkout">
+                        <div>
+                            <button class="checkout-btn" id="checkout">Checkout</button>
+                        </div>
+                        <div>
+                            <button class="checkout-btn close-btn">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
