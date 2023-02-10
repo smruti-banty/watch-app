@@ -47,7 +47,7 @@ npm start
 ```
 - Then inside broswer enter the following url.
 ```
-http://localhost/3200
+http://localhost:3200
 ```
 
 `!!! Happy coding !!!`

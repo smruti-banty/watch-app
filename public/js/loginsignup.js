@@ -76,6 +76,7 @@ function onLogout(event) {
 function checkToken() {
     if (localStorage.getItem('token') && !loginPage.classList.contains('d-none')) {
         loginPage.classList.add('d-none');
+        counterValue();
     } else {
         loginPage.classList.remove('d-none');
     }
