@@ -56,3 +56,33 @@ exports.logout = async (request, response) => {
     }
 
 }
+
+exports.checkEmail = async (request, response) => {
+    const { email } = request.body;
+    try {
+        const userCollection = await dbConnect(USER_COLLECTION);
+        const user = await userCollection.findOne({ "email": email });
+        
+        if (user) {
+            return response.json({ userId: user._id });
+        } else {
+            return response.status(404).send("Email not exists");
+        }
+    } catch (error) {
+        console.error(error);
+        return response.status(500).send();
+    }
+}
+
+exports.forgotPassword = async (request, response) => {
+    const { password, userId } = request.body;
+
+    try {
+        const userCollection = await dbConnect(USER_COLLECTION);
+        await userCollection.updateOne({ "_id": new ObjectId(userId) }, { "$set": { password } });
+        return response.send();
+    } catch (error) {
+        console.error(error);
+        return response.status(500).send();
+    }
+}

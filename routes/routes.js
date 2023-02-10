@@ -8,6 +8,8 @@ const userController = require("../controller/user.controller");
 router.post("/user/signup", userController.signup);
 router.post("/user/login", userController.login);
 router.get("/user/logout", jwtHelper.verify, userController.logout);
+router.post("/user/email", userController.checkEmail);
+router.post("/user/forgot", userController.forgotPassword);
 
 router.get("/product", productController.getAllProduct);
 router.post("/product/cart", jwtHelper.verify, productController.addToCart);

@@ -70,6 +70,19 @@
 .login-background .login-container .form-group .form-control:focus {
     outline: 1px solid blue;
 }
+.login-background .login-container .forgot-password {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.login-background .login-container .forgot-password button {
+    all: unset;
+    text-decoration: underline;
+    color: var(--white);
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 1.01rem;
+}
 
 @keyframes opacity {
     from {

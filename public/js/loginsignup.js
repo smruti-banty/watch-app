@@ -2,10 +2,12 @@ const loginPage = document.querySelector('.login-background')
 const signInBtn = document.querySelector('.login-background .signup-card form');
 const logInBtn = document.querySelector('.login-background .login-card form');
 const logout = document.querySelector('header .logout');
+const forgotPassword = document.querySelector('.login-background .login-container .forgot-password button')
 
 signInBtn.addEventListener('submit', onSignIn);
 logInBtn.addEventListener('submit', onLogIn);
 logout.addEventListener('click', onLogout);
+forgotPassword.addEventListener('click', onForgotPassword);
 
 function onSignIn(event) {
     event.preventDefault();
@@ -80,4 +82,37 @@ function checkToken() {
     } else {
         loginPage.classList.remove('d-none');
     }
+}
+
+function onForgotPassword(event) {
+    const email = prompt('Enter email');
+
+    const headers = {
+        "Content-Type": "application/json"
+    };
+
+    if (email) {
+        fetch(`/api/user/email`, { method: 'POST', headers, body: JSON.stringify({ email }) }).then(async response => {
+            if (response.ok) {
+                const { userId } = await response.json();
+                const password = prompt("Enter new password");
+                if (password)
+                    changePassword(password, userId);
+            } else {
+                alert("Email not exists");
+            }
+        });
+    }
+}
+
+function changePassword(password, userId) {
+    const headers = {
+        "Content-Type": "application/json"
+    };
+
+    fetch(`/api/user/forgot`, { method: 'POST', headers, body: JSON.stringify({ password, userId }) }).then(response => {
+        if (response.ok) {
+            alert('Password Changed');
+        }
+    });
 }
