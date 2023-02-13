@@ -8,7 +8,7 @@ async function onload(event) {
     const products = await response.json();
     allProduct.push(...Array.from(products));
     checkToken();
-    renderProduct(allProduct); 
+    renderProduct(allProduct);
 }
 
 
@@ -23,16 +23,17 @@ function renderProduct(products) {
     const allCatagory = document.querySelectorAll('.product .card .color-box .color');
     allCatagory.forEach(catagory => {
         catagory.addEventListener('click', () => {
-            allCatagory.forEach(catagory => catagory.classList.remove('active'))
-            catagory.classList.add('active');
 
-            const card = catagory.parentElement.parentElement.parentElement;
+            const card = catagory.closest('.cards');
             const thumbnail = card.querySelector('.thumbnail');
             thumbnail.src = catagory.dataset.thumbnail;
 
+            card.querySelectorAll(".color-box .color").forEach(catagory => catagory.classList.remove('active'));
+            catagory.classList.add('active');
+
             const reviewSubmitBtn = document.querySelector('.product .card-container .card-2 .footer .submit-btn button')
 
-            renderProduct.dataset.catagory = catagory.name;
+            reviewSubmitBtn.dataset.catagory = catagory.catagory;
         })
     })
 
